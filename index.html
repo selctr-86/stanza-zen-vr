@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Neon Zen Garden VR - Quest 3</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #1f0c19" fog="type: exponential; color: #2b1122; density: 0.06">
+      
+      <!-- Illuminazione ambientale morbida + accenti rosa/ciano -->
+      <a-light type="ambient" color="#ffb3d9" intensity="0.45"></a-light>
+      <a-light type="point" color="#ff66b3" intensity="1.2" position="0 3.5 -2" distance="12"></a-light>
+      <a-light type="point" color="#00ffe5" intensity="0.9" position="-2 0.3 -1.5" distance="5"></a-light>
+      <a-light type="point" color="#00ffe5" intensity="0.9" position="2 0.3 -1.5" distance="5"></a-light>
+
+      <!-- Stanza Tatami (Dove ti trovi seduta) -->
+      <a-box position="0 0.05 1.5" width="4" height="0.1" depth="3" color="#a69076" roughness="0.9"></a-box>
+      
+      <!-- Griglia pavimento luminoso alle tue spalle -->
+      <a-plane position="0 0.11 2.5" rotation="-90 0 0" width="3.8" height="0.9" 
+               color="#ffb3d9" material="emissive: #ff4da6; emissiveIntensity: 0.7; wireframe: false"></a-plane>
+
+      <!-- Giardino di Ghiaia Rosa -->
+      <a-plane position="0 0 -2" rotation="-90 0 0" width="10" height="10" color="#d98cb3" roughness="1"></a-plane>
+
+      <!-- Parete Shoji Curva di Fondo -->
+      <a-cylinder position="0 2 -2" radius="4.5" height="4" open-ended="true" side="double"
+                  theta-start="110" theta-length="140"
+                  color="#ffd9ec" material="emissive: #ff80bf; emissiveIntensity: 0.45; roughness: 0.4"></a-cylinder>
+
+      <!-- Striscia LED Ciano Perimetrale -->
+      <a-cylinder position="0 0.05 -2" radius="4.48" height="0.06" open-ended="true" side="double"
+                  theta-start="110" theta-length="140"
+                  color="#00ffe5" material="emissive: #00ffe5; emissiveIntensity: 2"></a-cylinder>
+
+      <!-- Porte Shoji Laterali con LED Ciano alla base -->
+      <a-entity position="-1.5 1.5 0" rotation="0 25 0">
+        <a-box width="1.4" height="3" depth="0.04" color="#ffe6f2" material="emissive: #ff99cc; emissiveIntensity: 0.5"></a-box>
+        <a-box position="0 -1.45 0" width="1.4" height="0.05" depth="0.06" color="#00ffe5" material="emissive: #00ffe5; emissiveIntensity: 2"></a-box>
+      </a-entity>
+
+      <a-entity position="1.5 1.5 0" rotation="0 -25 0">
+        <a-box width="1.4" height="3" depth="0.04" color="#ffe6f2" material="emissive: #ff99cc; emissiveIntensity: 0.5"></a-box>
+        <a-box position="0 -1.45 0" width="1.4" height="0.05" depth="0.06" color="#00ffe5" material="emissive: #00ffe5; emissiveIntensity: 2"></a-box>
+      </a-entity>
+
+      <!-- Bonsai Centrale -->
+      <a-entity position="0 0 -1.2">
+        <a-torus rotation="90 0 0" radius="0.65" radius-tubular="0.06" color="#c2a3b3"></a-torus>
+        <a-cone position="0 0.5 0" radius-bottom="0.16" radius-top="0.04" height="1" color="#6e473b"></a-cone>
+        <!-- Chiome Sakura -->
+        <a-sphere position="0 1.05 0" scale="0.45 0.18 0.45" color="#ff99cc" material="emissive: #ff66b3; emissiveIntensity: 0.35"></a-sphere>
+        <a-sphere position="0.28 0.85 0.1" scale="0.32 0.14 0.32" color="#ffb3d9" material="emissive: #ff66b3; emissiveIntensity: 0.35"></a-sphere>
+        <a-sphere position="-0.28 0.78 -0.1" scale="0.35 0.14 0.35" color="#ff80bf" material="emissive: #ff66b3; emissiveIntensity: 0.35"></a-sphere>
+        <!-- Faretti caldi alla base del bonsai -->
+        <a-sphere position="0.3 0.05 0.2" radius="0.03" color="#fff0b3" material="emissive: #ffcc00; emissiveIntensity: 2"></a-sphere>
+        <a-sphere position="-0.3 0.05 0.2" radius="0.03" color="#fff0b3" material="emissive: #ffcc00; emissiveIntensity: 2"></a-sphere>
+      </a-entity>
+
+      <!-- Bonsai di Sfondo (Sinistra e Destra) -->
+      <a-entity position="-1.8 0 -2.8">
+        <a-torus rotation="90 0 0" radius="0.7" radius-tubular="0.07" color="#c2a3b3"></a-torus>
+        <a-cone position="0 0.65 0" radius-bottom="0.18" radius-top="0.05" height="1.3" color="#6e473b"></a-cone>
+        <a-sphere position="0 1.3 0" scale="0.5 0.2 0.5" color="#d9e6ff" material="emissive: #99c2ff; emissiveIntensity: 0.3"></a-sphere>
+        <a-sphere position="0.3 1.05 0.15" scale="0.38 0.15 0.38" color="#d9e6ff" material="emissive: #99c2ff; emissiveIntensity: 0.3"></a-sphere>
+      </a-entity>
+
+      <a-entity position="1.6 0 -2.6">
+        <a-torus rotation="90 0 0" radius="0.7" radius-tubular="0.07" color="#c2a3b3"></a-torus>
+        <a-cone position="0 0.65 0" radius-bottom="0.18" radius-top="0.05" height="1.3" color="#6e473b"></a-cone>
+        <a-sphere position="0 1.3 0" scale="0.5 0.2 0.5" color="#ff80bf" material="emissive: #ff4da6; emissiveIntensity: 0.4"></a-sphere>
+        <a-sphere position="-0.3 1.05 0.15" scale="0.38 0.15 0.38" color="#ff99cc" material="emissive: #ff4da6; emissiveIntensity: 0.4"></a-sphere>
+      </a-entity>
+
+      <!-- Camera VR (Altezza occhi da seduti sul tatami: 1.1m) -->
+      <a-entity position="0 0 1.2">
+        <a-camera position="0 1.1 0"></a-camera>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
